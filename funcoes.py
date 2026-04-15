@@ -49,3 +49,29 @@ def calcula_pontos_soma(entrada):
     for valor in entrada:
         soma += valor 
     return soma
+
+
+def calcula_pontos_sequencia_baixa(dados_estoque):
+    dicionario_aparicoes = {
+        1:0,
+        2:0,
+        3:0,
+        4:0,
+        5:0,
+        6:0,
+    }
+
+    for valor in dados_estoque:
+        dicionario_aparicoes[valor] += 1
+    
+    if dicionario_aparicoes[1] >= 1 and dicionario_aparicoes[2] >= 1 and dicionario_aparicoes[3] >= 1 and dicionario_aparicoes[4] >= 1:
+        return 15
+    if dicionario_aparicoes[2] >= 1 and dicionario_aparicoes[3] >= 1 and dicionario_aparicoes[4] >= 1 and dicionario_aparicoes[5] >= 1:
+        return 15
+    if dicionario_aparicoes[3] >= 1 and dicionario_aparicoes[4] >= 1 and dicionario_aparicoes[5] >= 1 and dicionario_aparicoes[6] >= 1:
+        return 15        
+    return 0 
+
+
+
+    
