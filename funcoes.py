@@ -44,3 +44,8 @@ def calcula_pontos_regra_simples(dados_rolados):
         saida[valor] += valor
     
     return saida
+def calcula_pontos_soma(entrada):
+    soma = 0     
+    for valor in entrada:
+        soma += valor 
+    return soma
