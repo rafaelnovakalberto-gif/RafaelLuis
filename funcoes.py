@@ -72,6 +72,23 @@ def calcula_pontos_sequencia_baixa(dados_estoque):
         return 15        
     return 0 
 
+def calcula_pontos_sequencia_alta (entrada):
+    dicionario_aparicoes = {
+    1:0,
+    2:0,
+    3:0,
+    4:0,
+    5:0,
+    6:0,
+}
+    for numero in entrada:
+        dicionario_aparicoes[numero] += 1
+    
+    for i in range(2):
+        if dicionario_aparicoes[1+i] >= 1 and dicionario_aparicoes[2+i] >= 1 and dicionario_aparicoes[3+i] >= 1 and dicionario_aparicoes[4+i]>= 1 and dicionario_aparicoes[5+i]>= 1:
+            return 30 
+    
+    return 0
 
 
     
