@@ -90,19 +90,22 @@ def calcula_pontos_sequencia_alta (entrada):
     
     return 0
 
+
 def calcula_pontos_full_house(dados):
     contagem = {}
-
     for valor in dados:
         if valor not in contagem:
             contagem[valor] = 0
         contagem[valor] += 1
 
-        valores = list(contagem.values())
+    valores = list(contagem.values())
+                   
+    if 3 in valores and 2 in valores:
+        soma = 0
+        for valor in dados:
+            soma += valor
+        return soma
 
-        if 3 in valores and 2 in valores:
-            return sum(dados)
-    
     return 0
 
     
