@@ -138,3 +138,27 @@ def calcula_pontos_quina(dados):
             return 50
     
     return 0
+
+def calcula_pontos_regra_avancada(dados):
+    pontuacoes = {
+        "cinco_iguais": calcula_pontos_quina(dados),
+        "full_house": calcula_pontos_full_house(dados),
+        "quadra": calcula_pontos_quadra(dados),
+        "sem_combinacao": calcula_pontos_soma(dados),
+        "sequencia_alta": calcula_pontos_sequencia_alta(dados),
+        "sequencia_baixa": calcula_pontos_sequencia_baixa(dados)
+    }
+
+    return pontuacoes
+
+def faz_jogada(dados, categoria, cartela_de_pontos):
+    pontos_simples = calcula_pontos_regra_simples(dados)
+    pontos_avancados = calcula_pontos_regra_avancada(dados)
+    
+    if categoria == "1" or categoria == "2" or categoria == "3" or categoria == "4" or categoria == "5" or categoria == "6":
+        categoria_num = int(categoria)
+        cartela_de_pontos["regra_simples"][categoria_num] = pontos_simples[categoria_num]
+    else:
+        cartela_de_pontos["regra_avancada"][categoria] = pontos_avancados[categoria]
+
+    return cartela_de_pontos
